@@ -19,7 +19,8 @@ const Description = () => {
     dispatch(fatchSingleVideo(videoId));
   }, [dispatch, videoId]);
 
-  const { link, title, date, description, likes, unlikes, id } = video || {};
+  const { link, title, date, description, likes, unlikes, id, tags } =
+    video || {};
 
   // Decide what to render
 
@@ -56,7 +57,7 @@ const Description = () => {
             </div>
           </div>
         </div>
-        <RelatedVideoList currentId={id} video={video} />
+        <RelatedVideoList id={id} tags={tags} />
       </div>
     );
 

@@ -10,9 +10,11 @@ const VideoGrid = () => {
     (state) => state.videos
   );
 
+  const { tags, search } = useSelector((state) => state.filter);
+
   useEffect(() => {
-    dispatch(fatchVideo());
-  }, [dispatch]);
+    dispatch(fatchVideo({ tags, search }));
+  }, [dispatch, tags, search]);
 
   // Dicide what to render
   let content;
